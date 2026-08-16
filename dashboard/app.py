@@ -29,102 +29,125 @@ st.markdown("""
     html, body, [class*="css"] {
         font-family: 'Inter', sans-serif !important;
     }
+    
+    /* Mesh Gradient Background */
     .stApp {
-        background-color: #F8F9FA;
+        background-color: #f0f4f8;
+        background-image: 
+            radial-gradient(at 10% 20%, rgba(205, 240, 225, 0.7) 0px, transparent 50%),
+            radial-gradient(at 80% 10%, rgba(215, 230, 250, 0.7) 0px, transparent 50%),
+            radial-gradient(at 40% 60%, rgba(175, 195, 245, 0.6) 0px, transparent 50%),
+            radial-gradient(at 90% 80%, rgba(245, 230, 215, 0.7) 0px, transparent 50%),
+            radial-gradient(at 10% 90%, rgba(195, 205, 245, 0.7) 0px, transparent 50%);
+        background-attachment: fixed;
     }
 
     /* Headings */
     h1, h2, h3, h4, h5, h6 {
-        color: #1B4332 !important;
+        color: #1a202c !important;
         font-weight: 700 !important;
     }
     p, span, label {
-        color: #333333;
+        color: #2d3748;
     }
     
-    /* Sidebar */
+    /* Sidebar - Glassmorphism */
     [data-testid="stSidebar"] {
-        background-color: #FFFFFF !important;
-        box-shadow: 2px 0 12px rgba(0, 0, 0, 0.05);
+        background: rgba(255, 255, 255, 0.6) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.8) !important;
+        box-shadow: 2px 0 24px rgba(0, 0, 0, 0.02);
     }
 
-    /* Cards for Metrics */
+    /* Cards for Metrics - Glassmorphism */
     [data-testid="metric-container"] {
-        background-color: #FFFFFF;
+        background: rgba(255, 255, 255, 0.65) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
         border-radius: 20px;
         padding: 24px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        border: 1px solid rgba(27, 67, 50, 0.05);
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.8) !important;
         margin-bottom: 1rem;
     }
     [data-testid="stMetricLabel"] p {
-        color: #6C757D !important;
+        color: #4a5568 !important;
         font-weight: 600 !important;
         font-size: 0.95rem !important;
     }
     [data-testid="stMetricValue"] {
-        color: #1B4332 !important;
+        color: #1a202c !important;
         font-weight: 700 !important;
         font-size: 2.2rem !important;
     }
     [data-testid="stMetricDelta"] svg {
-        color: #74C69D !important;
+        color: #48bb78 !important;
     }
     
-    /* Images / Charts wrappers */
+    /* Images / Charts wrappers - Glassmorphism */
     [data-testid="stImage"] {
-        background-color: #FFFFFF;
+        background: rgba(255, 255, 255, 0.65) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
         border-radius: 20px;
         padding: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        border: 1px solid rgba(27, 67, 50, 0.05);
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.8) !important;
     }
     [data-testid="stImage"] img {
         border-radius: 12px;
     }
     [data-testid="stImage"] caption {
-        color: #6C757D !important;
+        color: #4a5568 !important;
         font-weight: 500;
         margin-top: 10px;
     }
 
     /* Buttons */
     .stButton > button {
-        background-color: #1B4332 !important;
+        background-color: #1a202c !important;
         color: #FFFFFF !important;
         border-radius: 50px !important;
         border: none !important;
         padding: 0.6rem 1.5rem !important;
         font-weight: 600 !important;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 10px rgba(27, 67, 50, 0.2);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     .stButton > button:hover {
-        background-color: #2D6A4F !important;
-        box-shadow: 0 6px 14px rgba(45, 106, 79, 0.3);
+        background-color: #2d3748 !important;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
         transform: translateY(-2px);
     }
     
     /* Number Input */
     .stNumberInput input {
         border-radius: 12px !important;
-        border: 1px solid #E0E0E0 !important;
+        border: 1px solid rgba(255, 255, 255, 0.8) !important;
+        background: rgba(255, 255, 255, 0.5) !important;
         padding: 0.5rem !important;
     }
     
     /* Alerts */
     .stAlert {
         border-radius: 16px !important;
-        border: none !important;
+        border: 1px solid rgba(255, 255, 255, 0.8) !important;
+        background: rgba(255, 255, 255, 0.65) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
         box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     }
 
-    /* Dataframe wrapper styling */
+    /* Dataframe wrapper styling - Glassmorphism */
     [data-testid="stDataFrame"] {
+        background: rgba(255, 255, 255, 0.65) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
         border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        border: 1px solid rgba(27, 67, 50, 0.05);
+        padding: 16px;
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.8) !important;
     }
 
     /* White spacing between sections */
