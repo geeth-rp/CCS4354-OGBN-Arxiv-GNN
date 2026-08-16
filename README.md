@@ -1,5 +1,7 @@
 # OGBN-Arxiv Graph Neural Networks
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/)
+
 GNN coursework on OGBN-Arxiv dataset featuring GCN and GAT models, along with an interactive Streamlit results dashboard.
 
 ## Repository Structure
@@ -29,10 +31,21 @@ To run the notebook:
 
 ## Running the Dashboard
 
-Ensure the dependencies are installed and the model outputs are present in `dashboard/outputs/`. Then launch the dashboard:
+### Local Execution
+Ensure the dependencies are installed and the model outputs are present in `dashboard/outputs/`. Then launch the dashboard locally:
 ```bash
 python -m streamlit run dashboard/app.py
 ```
+
+### Live Online Deployment (Streamlit Community Cloud)
+You can host this dashboard online for free so anyone can easily access it without installing code:
+1. Go to [share.streamlit.io](https://share.streamlit.io/) and log in with your GitHub account.
+2. Click **New app**.
+3. Select this repository (`geeth-rp/CCS4354-OGBN-Arxiv-GNN`).
+4. Set the **Main file path** to `dashboard/app.py`.
+5. Click **Deploy!** 
+
+Once deployed, you can update the Streamlit badge link at the top of this `README.md` with your new live app URL!
 
 ## Models and Results Summary
 
