@@ -62,4 +62,8 @@ Trained checkpoints for both models are saved as `gcn_best.pt` and `gat_best.pt`
 
 | Name | Student ID | Contribution |
 | :--- | :--- | :--- |
-| | | |
+|D.M.V.Kithmini |23ug1-0076 | |
+|D.M.A.Dewmini |23ug1-0073 | |
+|Ridmika Yohani |23ug1-0120 | |
+|Geeth Pelpola |23ug1-0120 | |
+|Chalani Kavindya |23ug1-0033 | |
