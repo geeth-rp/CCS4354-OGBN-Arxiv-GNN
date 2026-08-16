@@ -1,6 +1,6 @@
 # OGBN-Arxiv Graph Neural Networks
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ccs4354-ogbn-arxiv-gnn-ane2sawqnfln7kq5walnbm.streamlit.app/)
 
 GNN coursework on OGBN-Arxiv dataset featuring GCN and GAT models, along with an interactive Streamlit results dashboard.
 
