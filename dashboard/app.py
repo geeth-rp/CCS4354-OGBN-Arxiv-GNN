@@ -19,6 +19,121 @@ import os
 
 st.set_page_config(page_title="OGBN-Arxiv Graph Intelligence Dashboard", layout="wide")
 
+# Custom CSS injection for UI restyling
+st.markdown("""
+<style>
+    /* Import Google Font */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    /* Global Typography & Background */
+    html, body, [class*="css"] {
+        font-family: 'Inter', sans-serif !important;
+    }
+    .stApp {
+        background-color: #F8F9FA;
+    }
+
+    /* Headings */
+    h1, h2, h3, h4, h5, h6 {
+        color: #1B4332 !important;
+        font-weight: 700 !important;
+    }
+    p, span, label {
+        color: #333333;
+    }
+    
+    /* Sidebar */
+    [data-testid="stSidebar"] {
+        background-color: #FFFFFF !important;
+        box-shadow: 2px 0 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Cards for Metrics */
+    [data-testid="metric-container"] {
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        padding: 24px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(27, 67, 50, 0.05);
+        margin-bottom: 1rem;
+    }
+    [data-testid="stMetricLabel"] p {
+        color: #6C757D !important;
+        font-weight: 600 !important;
+        font-size: 0.95rem !important;
+    }
+    [data-testid="stMetricValue"] {
+        color: #1B4332 !important;
+        font-weight: 700 !important;
+        font-size: 2.2rem !important;
+    }
+    [data-testid="stMetricDelta"] svg {
+        color: #74C69D !important;
+    }
+    
+    /* Images / Charts wrappers */
+    [data-testid="stImage"] {
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        padding: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(27, 67, 50, 0.05);
+    }
+    [data-testid="stImage"] img {
+        border-radius: 12px;
+    }
+    [data-testid="stImage"] caption {
+        color: #6C757D !important;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+
+    /* Buttons */
+    .stButton > button {
+        background-color: #1B4332 !important;
+        color: #FFFFFF !important;
+        border-radius: 50px !important;
+        border: none !important;
+        padding: 0.6rem 1.5rem !important;
+        font-weight: 600 !important;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(27, 67, 50, 0.2);
+    }
+    .stButton > button:hover {
+        background-color: #2D6A4F !important;
+        box-shadow: 0 6px 14px rgba(45, 106, 79, 0.3);
+        transform: translateY(-2px);
+    }
+    
+    /* Number Input */
+    .stNumberInput input {
+        border-radius: 12px !important;
+        border: 1px solid #E0E0E0 !important;
+        padding: 0.5rem !important;
+    }
+    
+    /* Alerts */
+    .stAlert {
+        border-radius: 16px !important;
+        border: none !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    /* Dataframe wrapper styling */
+    [data-testid="stDataFrame"] {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(27, 67, 50, 0.05);
+    }
+
+    /* White spacing between sections */
+    .stHorizontalBlock {
+        gap: 2rem !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 st.title("OGBN-Arxiv Graph Intelligence Dashboard")
 st.caption("CCS4354 — Tensors and Graphs Coursework | Task 08")
 
