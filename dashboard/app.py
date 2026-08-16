@@ -19,7 +19,7 @@ import os
 
 st.set_page_config(page_title="OGBN-Arxiv Graph Intelligence Dashboard", layout="wide")
 
-st.title("🕸️ OGBN-Arxiv Graph Intelligence Dashboard")
+st.title("OGBN-Arxiv Graph Intelligence Dashboard")
 st.caption("CCS4354 — Tensors and Graphs Coursework | Task 08")
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "outputs")
@@ -42,7 +42,7 @@ section = st.sidebar.radio(
 
 # ---------------- Graph Statistics ----------------
 if section == "Graph Statistics":
-    st.header("📊 Graph Statistics")
+    st.header("Graph Statistics")
     col1, col2, col3 = st.columns(3)
     col1.metric("Nodes", "~169,343")
     col2.metric("Edges", "~1,166,243")
@@ -57,7 +57,7 @@ if section == "Graph Statistics":
 
 # ---------------- Model Performance ----------------
 elif section == "Model Performance":
-    st.header("📈 Model Performance")
+    st.header("Model Performance")
 
     results_path = os.path.join(DATA_DIR, "results_df.csv")
     if os.path.exists(results_path):
@@ -75,7 +75,7 @@ elif section == "Model Performance":
 
 # ---------------- Node Classification ----------------
 elif section == "Node Classification":
-    st.header("🔍 Node Classification Lookup")
+    st.header("Node Classification Lookup")
 
     preds_path = os.path.join(DATA_DIR, "predictions.npy")
     labels_path = os.path.join(DATA_DIR, "true_labels.npy")
@@ -101,7 +101,7 @@ elif section == "Node Classification":
 
 # ---------------- Embedding Visualization ----------------
 elif section == "Embedding Visualization":
-    st.header("🌌 Embedding Visualization")
+    st.header("Embedding Visualization")
     safe_image("embedding_tsne.png", "t-SNE projection of learned node embeddings, colored by class")
     st.caption(
         "Tight, separated clusters indicate the model has learned embeddings that "
