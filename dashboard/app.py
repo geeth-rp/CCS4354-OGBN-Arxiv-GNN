@@ -175,7 +175,7 @@ def safe_image(filename, caption):
 st.sidebar.header("Navigation")
 section = st.sidebar.radio(
     "Go to",
-    ["Graph Statistics", "Model Performance", "Node Classification", "Embedding Visualization"],
+    ["Graph Statistics", "Model Performance", "Node Classification", "Embedding Visualization", "Attention Analysis"],
 )
 
 st.sidebar.markdown("---")
@@ -276,6 +276,28 @@ elif section == "Embedding Visualization":
     st.header("Embedding Visualization")
     safe_image("embedding_tsne.png", "t-SNE projection of learned node embeddings, colored by class")
     st.caption(
-        "Tight, separated clusters indicate the model has learned embeddings that "
-        "group papers of the same subject category together."
+        "t-SNE projection of 2,000 test-set node embeddings (perplexity=30, random_state=42). "
+        "Visually separated colour clusters suggest the model has learned representations "
+        "that group similar subject categories together — this is qualitative, suggestive "
+        "evidence of structure, not proof of generalisation."
     )
+
+# ---------------- Attention Analysis ----------------
+elif section == "Attention Analysis":
+    st.header("Attention Analysis")
+    
+    st.caption(
+        "GAT layer-1 attention weights (averaged across 8 heads, self-loops included) "
+        "for 5 sample test-set nodes, showing each node's top attended neighbours "
+        "and the neighbour's true class."
+    )
+    
+    safe_image("attention_analysis_chart.png", "Top attended neighbours per sample node")
+    
+    st.subheader("Attention Weights Table")
+    table_path = os.path.join(DATA_DIR, "attention_analysis_table.csv")
+    if os.path.exists(table_path):
+        attn_df = pd.read_csv(table_path)
+        st.dataframe(attn_df, use_container_width=True)
+    else:
+        st.info("'attention_analysis_table.csv' not found — run the attention analysis in the notebook first.")
